@@ -1,0 +1,50 @@
+provider: miibo_agent
+label:
+  en_US: MiiboAgent
+description:
+  en_US: Unofficial model provider for miibo
+  zh_Hans: MiiboAgent 提供的模型。
+  ja_JP: Miibo Agentのモデルプラグイン非公式実装
+icon_small:
+  en_US: miibo_icon.png
+icon_large:
+  en_US: miibo_icon.webp
+background: "#FFF6F2"
+help:
+  title:
+    en_US: Get your API key from miibo
+    zh_Hans: 从 miibo 获取 API Key
+  url:
+    en_US: https://miibo.dev/admin/externalServices/api
+supported_model_types:
+  - llm
+configurate_methods:
+  - predefined-model
+provider_credential_schema:
+  credential_form_schemas:
+    - variable: api_key
+      required: true
+      label:
+        en_US: API Key
+      type: secret-input
+      placeholder:
+        zh_Hans: 在此输入您的 API Key
+        en_US: Enter your API Key
+
+    - variable: agent_id
+      required: true
+      label:
+        en_US: Agent ID
+      type: text-input
+      placeholder:
+        zh_Hans: 在此输入您的 Agent ID
+        en_US: Enter your Agent ID
+models:
+  llm:
+    predefined:
+      - "models/llm/*.yaml"
+extra:
+  python:
+    provider_source: provider/miibo_agent.py
+    model_sources:
+      - "models/llm/llm.py"

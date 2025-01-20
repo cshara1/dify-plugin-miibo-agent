@@ -1,0 +1,44 @@
+version: 0.0.1
+type: plugin
+author: cshara1
+name: miibo_agent
+label:
+  en_US: miibo_agent
+  ja_JP: miibo_agent
+  zh_Hans: miibo_agent
+  pt_BR: miibo_agent
+description:
+  en_US: Unofficial model provider for miibo
+  ja_JP: Unofficial Model provider for miibo
+  zh_Hans: Unofficial Model provider for miibo
+  pt_BR: Unofficial Model provider for miibo
+icon: miibo_icon.png
+resource:
+  memory: 268435456
+  permission:
+    model:
+      enabled: true
+      llm: true
+      text_embedding: false
+      rerank: false
+      tts: false
+      speech2text: false
+      moderation: false
+    storage:
+      enabled: true
+      size: 1048576
+plugins:
+  models:
+    - provider/miibo_agent.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2025-01-15T16:21:36.921001+09:00
+privacy: PRIVACY.md
+verified: false
