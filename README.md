@@ -1,7 +1,7 @@
 ## miibo_agent
-**DifyでmiiboがLLMとして選択できるプラグイン**
 
 ### Description
+DifyでmiiboがLLMとして選択できるプラグイン
 Unofficial model provider for miibo
 
 ### Release history
