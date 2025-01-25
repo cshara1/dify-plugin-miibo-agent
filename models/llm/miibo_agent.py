@@ -1,5 +1,5 @@
 import requests
-from typing import Any, Optional, Union
+from typing import Any, Dict, Optional, Union
 from dify_plugin.entities.model.message import PromptMessageTool
 
 class MiiboAgent:
@@ -7,10 +7,14 @@ class MiiboAgent:
         self.agent_id = agent_id
         self.api_key = api_key
 
-    def _build_messages(self, messages: list[dict]) -> str:
+    def _build_messages(self, messages: list[dict]) -> Dict[str, str]:
         if len(messages) == 0:
-            return ""
-        user_messages = [msg["content"] for msg in messages if msg["role"] == "user"]
+            return {"utterance", ""}
+        user_messages = [{"utterance": msg.get("content", ""), "base64_image": msg.get("image", "")} for msg in messages if msg["role"] == "user"]        
+        if not user_messages:
+            return {"utterance": ""}
+        if user_messages[-1]["base64_image"] == "":
+            del user_messages[-1]["base64_image"]
         return user_messages[-1]
 
     def generate(
@@ -23,10 +27,11 @@ class MiiboAgent:
         user: str,
         tools: Optional[list[PromptMessageTool]] = None,
     ) -> dict:
+        request = self._build_messages(messages)
         full_request = {
+            **request,
             "api_key": self.api_key,
             "agent_id": self.agent_id,
-            "utterance": self._build_messages(messages),
             "uid": user,
         }
 
