@@ -1,4 +1,4 @@
-version: 0.0.1
+version: 0.0.2
 type: plugin
 author: cshara1
 name: miibo_agent
@@ -31,7 +31,7 @@ plugins:
   models:
     - provider/miibo_agent.yaml
 meta:
-  version: 0.0.1
+  version: 0.0.2
   arch:
     - amd64
     - arm64

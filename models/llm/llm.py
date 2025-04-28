@@ -102,11 +102,12 @@ class MiiboLanguageModel(LargeLanguageModel):
             if isinstance(message.content, str):
                 message_dict = {"role": "user", "content": message.content}
             else:
+                message_dict = {"role": "user"}
                 for message_content in message.content:
                     if message_content.type == PromptMessageContentType.TEXT:
-                        message_dict = {"role": "user", "content": message_content.data}
+                        message_dict['content'] = message_content.data
                     elif message_content.type == PromptMessageContentType.IMAGE:
-                        raise ValueError("Content object type not support image_url")
+                        message_dict['image'] = message_content.base64_data
         elif isinstance(message, AssistantPromptMessage):
             message = cast(AssistantPromptMessage, message)
             message_dict = {"role": "assistant", "content": message.content}
