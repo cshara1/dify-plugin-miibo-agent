@@ -6,7 +6,7 @@
 
 ### 構築手順
 - ローカル環境への構築手順
-  - [v0.0.2-Dify1.4.0_JP_HowTo](https://github.com/cshara1/dify-plugin-miibo-agent/blob/main/HowTo/v0.0.2-Dify1.4.0_JP_HowTo/v0.0.2-Dify1.4.0_JP_HowTo.md)
+  - [v0.0.2-Dify1.4.0_JP_HowTo](https://github.com/CTD-Networks-CO-LTD/dify-plugin-miibo-agent/blob/main/HowTo/v0.0.2-Dify1.4.0_JP_HowTo/v0.0.2-Dify1.4.0_JP_HowTo.md)
 
 ### 本プロジェクトの目標
 - miibo公式のプラグインとしてDifyのマーケットプレイスに掲載されること。
