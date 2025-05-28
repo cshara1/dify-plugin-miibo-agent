@@ -69,12 +69,16 @@ exit
 ### 2. DifyにてOllama埋め込みモデルの設定
 
 1. Difyに管理者でログイン後、管理者アイコンから「設定」の順にクリック
+![](./images/1_Dify_Admin_setting.png)
 
 2. 「モデルプロバイダー」をクリック後、モデルプロバイダーからOllamaを探す
-
-3. 「インストール」をクリック
+![](./images/2_Ollama_Install.png)
+<span>
+3. 「インストール」をクリック<br>
+<img src="./images/3_Ollama_Install.png">
 
 4. 「モデルを追加」をクリック
+![](./images/4_add_ollama.png)
 
 5. `mxbai-embed-large` を設定し「保存」をクリック
   ```
@@ -82,6 +86,11 @@ exit
   Model Name: mxbai-embed-large
   Base URL: http://ollama:11434
   ```
+<img src="./images/5_add_ollama.png" width=50%>
+
+<br><br>
 6. 「システムモデル設定」をクリック
 
+<br>
 7. 埋め込みモデルで「モデルを設定する」から「mxbai-embed-large」を選択し「保存」
+<img src="./images/6_sysyem_model_setting.png">
